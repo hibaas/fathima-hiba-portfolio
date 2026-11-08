@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Fathima Hiba K., aspiring Data Analyst.">
+  <title>Fathima Hiba K. | Data Analyst Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #0b0b0e;
+      --card: #151519;
+      --pink: #f05a9d;
+      --white: #f7f7f8;
+      --muted: #aaa8b0;
+      --border: #29272e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(11, 11, 14, 0.95);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .logo span,
+    .pink {
+      color: var(--pink);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--pink);
+    }
+
+    .menu-button {
+      display: none;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 85px 0;
+      scroll-margin-top: 65px;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      color: var(--pink);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 1.12;
+      margin: 20px 0;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .hero p,
+    .section-intro {
+      color: var(--muted);
+      max-width: 650px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 14px;
+      border: 1px solid var(--pink);
+      transition: 0.25s;
+    }
+
+    .button.primary {
+      background: var(--pink);
+      color: #170b12;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      opacity: 0.88;
+    }
+
+    .section-heading {
+      margin-bottom: 35px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 8px;
+    }
+
+    .about-text {
+      max-width: 800px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      border-color: var(--pink);
+      transform: translateY(-4px);
+    }
+
+    .card h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .card ul {
+      padding-left: 18px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      background: #251722;
+      color: #ff9bc5;
+      padding: 6px 12px;
+      border-radius: 5px;
+      font-size: 12px;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 16px;
+      color: var(--pink);
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .contact-card {
+      max-width: 700px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      .menu-button {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: var(--card);
+        padding: 20px 5%;
+        flex-direction: column;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .hero {
+        min-height: 70vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="container">
+      <a href="#home" class="logo">HIBA<span>.</span></a>
+
+      <button class="menu-button" id="menuButton" aria-label="Open navigation menu">
+        Menu ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">Aspiring Data Analyst</div>
+
+        <h1>
+          Hi, I'm <span class="pink">Fathima Hiba K.</span>
+        </h1>
+
+        <h2>Turning Data into Meaningful Insights.</h2>
+
+        <p>
+          A BBA graduate exploring the world of data analytics.
+          I enjoy working with data, discovering patterns and
+          presenting information through meaningful visualisations.
+        </p>
+
+        <div class="buttons">
+          <a class="button primary" href="#projects">Explore My Projects</a>
+          <a class="button" href="#contact">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Get to know me</div>
+          <h2>About <span class="pink">Me</span></h2>
+        </div>
+
+        <p class="about-text">
+          I am a BBA graduate from CPA College of Global Studies
+          with an interest in data analytics and business intelligence.
+          My academic background and experience in marketing and
+          business operations have helped me understand how businesses
+          work and make decisions.
+
+          <br><br>
+
+          I am currently developing my analytical skills through
+          hands-on learning and projects using Excel, Tableau, SQL,
+          Power BI and Python. My goal is to transform raw data into
+          clear insights that support better decision-making.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">What I work with</div>
+          <h2>My <span class="pink">Skills</span></h2>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Data Analytics</h3>
+            <p>Tools and concepts I am developing through practical learning.</p>
+            <div class="tags">
+              <span class="tag">Microsoft Excel</span>
+              <span class="tag">Tableau</span>
+              <span class="tag">SQL – Learning</span>
+              <span class="tag">Power BI – Learning</span>
+              <span class="tag">Python – Learning</span>
+              <span class="tag">Statistics</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Business & Accounting Tools</h3>
+            <p>Tools studied through additional accounting training.</p>
+            <div class="tags">
+              <span class="tag">Tally</span>
+              <span class="tag">SAP</span>
+              <span class="tag">QuickBooks</span>
+              <span class="tag">Zoho Books</span>
+              <span class="tag">Microsoft Word</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">My work</div>
+          <h2>Featured <span class="pink">Projects</span></h2>
+          <p class="section-intro">
+            A selection of academic and practical projects.
+            More projects will be added as I continue learning.
+          </p>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Sales & Profit Analysis Dashboard</h3>
+            <p>
+              A Tableau dashboard created to explore sales performance,
+              profit, customer segments, countries and product categories.
+            </p>
+            <div class="tags">
+              <span class="tag">Tableau</span>
+              <span class="tag">Data Visualisation</span>
+              <span class="tag">Business Analysis</span>
+            </div>
+            <a class="project-link" href="https://github.com/" target="_blank" rel="noopener">
+              Add project link →
+            </a>
+          </div>
+
+          <div class="card">
+            <h3>HR Practices Study</h3>
+            <p>
+              An academic project examining the effectiveness of HR
+              practices, with special reference to Sign Salkaar, Kottakkal.
+            </p>
+            <div class="tags">
+              <span class="tag">Business Research</span>
+              <span class="tag">HR Analysis</span>
+              <span class="tag">BBA Project</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">My background</div>
+          <h2>Experience & <span class="pink">Education</span></h2>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Marketing Intern</h3>
+            <p class="pink">Lyv & Revive</p>
+            <p>
+              Gained practical exposure to marketing activities,
+              business communication and organisational operations.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Bachelor of Business Administration</h3>
+            <p class="pink">CPA College of Global Studies</p>
+            <p>
+              Graduated in March 2026. Academic background in
+              business administration and management.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Additional Accounting Training</h3>
+            <p class="pink">Accountia</p>
+            <p>
+              Practical training in accounting software and
+              business tools, including SAP, Tally, Excel,
+              QuickBooks and Zoho Books.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Let's connect</div>
+          <h2>Contact <span class="pink">Me</span></h2>
+        </div>
+
+        <div class="card contact-card">
+          <h3>Have an opportunity or project in mind?</h3>
+          <p>
+            I would be happy to connect and discuss opportunities
+            in data analytics and business intelligence.
+          </p>
+
+          <div class="buttons">
+            <!-- Replace the email below with your real email -->
+            <a class="button primary" href="mailto:YOUR_EMAIL@example.com">
+              Email Me
+            </a>
+
+            <!-- Replace # with your LinkedIn profile URL -->
+            <a class="button" href="#" target="_blank" rel="noopener">
+              LinkedIn
+            </a>
+
+            <!-- Replace # with your GitHub profile URL -->
+            <a class="button" href="#" target="_blank" rel="noopener">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Fathima Hiba K. | Built with HTML & CSS
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+
+    menuButton.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+      });
+    });
+  </script>
+
+</body>
+</html>
